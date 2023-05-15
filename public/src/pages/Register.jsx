@@ -1,12 +1,10 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { useLocation } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import axios from "axios";
 
 export default function Register(props) {
   const navigate = useNavigate();
-  const location = useLocation();
   const [values, setValues] = useState({
     name: "",
     address: "",
@@ -22,14 +20,7 @@ export default function Register(props) {
       position: "bottom-right",
     });
 
-  // function handleClick() {
-  //   if (location.pathname === '/admin') {
-  //     console.log("pipipipipi");
-  //     navigate('/admin');
-  //   } else {
-  //     navigate('/');
-  //   }
-  // }
+ 
   function upload(e) {
     let testing = e.target.files[0];
     setEditImage(testing);

@@ -29,19 +29,13 @@ export default function Login() {
       })
 
       if (data) {
-        // console.log(data.errors,"kkkkkkkkkkkk");
         if (data.errors) {
           const { name, password } = data.errors;
           if (name) generateError(name);
           else if (password) generateError(password)
         }
-
-
-
         else {
-          navigate("/")
-
-
+          navigate(`/profile/${data.user}`)
         }
       }
     }
@@ -56,11 +50,11 @@ export default function Login() {
       <h2>Login</h2>
       <form onSubmit={(e) => handleSubmit(e)} >
         <div>
-          <label htmlFor="name">Email</label>
+          <label htmlFor="name">Username</label>
           <input type="name" name="name" placeholder="name" onChange={(e) => setValues({ ...values, [e.target.name]: e.target.value })} />
         </div>
         <div>
-          <label htmlFor="password">Email</label>
+          <label htmlFor="password">Password</label>
           <input type="passsword" name="password" placeholder="Password" onChange={(e) => setValues({ ...values, [e.target.name]: e.target.value })} />
         </div>
         <button type="submit" > Submit</button>
