@@ -11,7 +11,7 @@ module.exports.checkUser = (req,res, next) =>{
                 res.json({status:false})
         next()
             }else{
-                const user= await User.findById(req.body.id)
+                const user= await User.findById(req.body.userID)
                 console.log(user,"logged user");
                 if (user) res.json({status : true, address : user.address,name:user.name, image:user.imageUrl})
             }

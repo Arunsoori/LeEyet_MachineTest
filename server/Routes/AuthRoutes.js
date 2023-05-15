@@ -8,7 +8,7 @@ router.post("/",checkUser)
 router.post("/register",uploadFile.single('image'),register)
 router.post("/login",login)
 router.post("/uploadimage",uploadFile.single('image'),uploadImage)
-router.post("/update",updateUser)
+router.post("/update",uploadFile.single('image'),updateUser)
 
 
 module.exports = router;
